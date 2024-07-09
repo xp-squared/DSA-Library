@@ -34,7 +34,7 @@ int main() {
 To compile and run:
 
 cd MultiLanguage-DSA-Library/DataStructures/C++/SinglyLinkedList
-g++ -std=c++17 S-LinkedList.cpp S-LinkedListExample.cpp -o S-LinkedListExample
-./S-LinkedListExample
+g++ -std=c++17 S-LinkedList.cpp S-LinkedListExample.cpp -o tempExecutable && ./tempExecutable && rm tempExecutable
+
 
 */
