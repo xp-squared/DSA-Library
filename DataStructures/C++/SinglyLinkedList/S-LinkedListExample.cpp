@@ -2,9 +2,7 @@
 #include <iostream>
 
 int main() {
-    LinkedList<int> list;
-
-    // LinkedList list;  we want this implementation like on onlinegdb not the int stuff 
+    LinkedList list;
 
     // Test inserting elements
     list.Insert(10);
@@ -32,11 +30,11 @@ int main() {
     return 0;
 }
 
-
 /*
- This below is to run the code from the terminal
+To compile and run:
 
-cd DataStructures/C++/SinglyLinkedList
+cd MultiLanguage-DSA-Library/DataStructures/C++/SinglyLinkedList
+g++ -std=c++17 S-LinkedList.cpp S-LinkedListExample.cpp -o S-LinkedListExample
+./S-LinkedListExample
 
-
- */
+*/

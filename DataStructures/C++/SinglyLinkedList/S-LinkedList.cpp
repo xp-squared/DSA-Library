@@ -1,19 +1,17 @@
-#include <iostream>
+#include "S-LinkedList.h" 
 
-
-template <typename DT>
-LinkedList<DT>::LinkedList() {
+LinkedList::LinkedList() {
     head = nullptr;
-    int size = 0;
+    size = 0;
 }
 
-template <typename DT>
-LinkedList<DT>::~LinkedList() { // come back to destructor
+
+LinkedList::~LinkedList() { // come back to destructor
 
 }
 
-template <typename DT>
-void LinkedList<DT>::Insert(DT data) {
+
+void LinkedList::Insert(int data) {
     // this insert is where you are inserting at the front of the list and the original head becomes the next node
     Node* newNode = new Node(data); // creating the newnode, which is going to become the head.
     newNode->next = head;
@@ -21,8 +19,8 @@ void LinkedList<DT>::Insert(DT data) {
     size++;
 }
 
-template <typename DT>
-void LinkedList<DT>::RemoveNode(DT data) {
+
+void LinkedList::RemoveNode(int data) {
     // removing a node with specficic data
     cout << "Removing Node with the data: " << data << endl;
     // if there is no information available in the list
@@ -58,8 +56,8 @@ void LinkedList<DT>::RemoveNode(DT data) {
     size--;
 }
 
-template <typename DT>
-void LinkedList<DT>::Display() {
+
+void LinkedList::Display() const {
     if (head == nullptr) {
         cout << "Empty List." << endl;
         cout << "Current Size: " << size << endl;
@@ -71,5 +69,5 @@ void LinkedList<DT>::Display() {
         temp = temp->next;
     }
     cout << "NULLPTR" << endl;
-    cout << "Current Size: " << size << endl;
+    cout << "Current Size: " << size << endl << endl;
     }
