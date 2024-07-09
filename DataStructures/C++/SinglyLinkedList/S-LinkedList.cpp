@@ -11,16 +11,17 @@ LinkedList::~LinkedList() { // come back to destructor
 }
 
 
-void LinkedList::Insert(int data) {
+void LinkedList::Insert(char data) {
     // this insert is where you are inserting at the front of the list and the original head becomes the next node
     Node* newNode = new Node(data); // creating the newnode, which is going to become the head.
     newNode->next = head;
     head = newNode;
     size++;
+    Display();
 }
 
 
-void LinkedList::RemoveNode(int data) {
+void LinkedList::RemoveNode(char data) {
     // removing a node with specficic data
     cout << "Removing Node with the data: " << data << endl;
     // if there is no information available in the list

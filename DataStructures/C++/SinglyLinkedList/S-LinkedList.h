@@ -6,9 +6,9 @@ using namespace std;
 class LinkedList {
     private:
         struct Node {
-            int data;
+            char data;
             Node* next;
-            Node(int data) {
+            Node(char data) {
                 this->data = data;
                 next = nullptr;
             }
@@ -21,8 +21,8 @@ class LinkedList {
         LinkedList(); // default constructor, initializes an empty list
         ~LinkedList(); // destructor
 
-        void Insert(int data);
-        void RemoveNode(int data); 
+        void Insert(char data);
+        void RemoveNode(char data); 
 
         void InsertAt();
         void Search();

@@ -1,39 +1,45 @@
 #include "S-LinkedList.h"
 #include <iostream>
 
+using namespace std; 
+
+void displayMenu() {
+ cout << "Commands: " << endl;
+ cout << "+     : To begin the insert function" << endl;
+ cout << "D     : To display current linkedlist" << endl;
+ cout << "Q     : To quit the program" << endl;
+}
+
 int main() {
     LinkedList list;
+    displayMenu();
+    string command = "N";
+    char character;
 
-    // Test inserting elements
-    list.Insert(10);
-    list.Insert(20);
-    list.Insert(30);
+    while (command != "Q" && command != "q") {
+        cout << "\nCommand: ";
+        cin >> command;
 
-    // Display the list
-    std::cout << "List after inserting 10, 20, 30:" << std::endl;
-    list.Display();
+        if (command == "+") { // inserting
+            cout << "Enter an char to insert into list: ";
+            cin >> character;
+            cout << endl;
+            list.Insert(character);
+        }
 
-    // Test removing an element
-    list.RemoveNode(20);
+        if (command == "D") { // displaying the current list
+            list.Display();
+        }
+    }
 
-    // Display the list after removal
-    std::cout << "List after removing 20:" << std::endl;
-    list.Display();
-
-    // Test removing an element that doesn't exist
-    list.RemoveNode(40);
-
-    // Display the list after trying to remove a non-existent element
-    std::cout << "List after attempting to remove 40 (non-existent):" << std::endl;
-    list.Display();
-
+    cout << "Program terminated.\n" << endl;
     return 0;
 }
 
 /*
 To compile and run:
 
-cd MultiLanguage-DSA-Library/DataStructures/C++/SinglyLinkedList
+cd DataStructures/C++/SinglyLinkedList
 g++ -std=c++17 S-LinkedList.cpp S-LinkedListExample.cpp -o tempExecutable && ./tempExecutable && rm tempExecutable
 
 
