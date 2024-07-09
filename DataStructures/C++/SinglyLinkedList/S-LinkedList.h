@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 using namespace std;
@@ -9,7 +10,7 @@ class LinkedList {
         struct Node {
             DT data;
             Node* next;
-            Node(int data) {
+            Node(DT data) {
                 this->data = data;
                 next = nullptr;
             }
@@ -22,14 +23,17 @@ class LinkedList {
         LinkedList(); // default constructor, initializes an empty list
         ~LinkedList(); // destructor
 
-        // for these functions we need to come back to and add the parameters
-        void Insert();
-        void InsertAt();
-        void RemoveNode(); 
-        void Search();
+        void Insert(DT data);
+        void RemoveNode(DT data); 
 
+        void InsertAt();
+        void Search();
         void Display();
 
         // add copy constructor and assignment operator if you are copying lists. 
         // add error handling.
 };
+
+#include "S-LinkedList.cpp" 
+// backwards way of having this run by having the inclusion of the cpp file at the bottom.
+// would have been easier making in Visual Studio 2019, but ya live ya learn
