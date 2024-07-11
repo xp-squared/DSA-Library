@@ -28,11 +28,11 @@ int main() {
             list.Display();
         }
 
-        if (command == "D") { // displaying the current list
+        else if (command == "D") { // displaying the current list
             list.Display();
         }
 
-        if (command[0] == '-') { // displaying the current list
+        else if (command[0] == '-') { // displaying the current list
             char character = command[1];
             list.RemoveNode(character);
             cout << endl;
