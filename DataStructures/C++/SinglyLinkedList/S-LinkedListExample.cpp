@@ -5,7 +5,8 @@ using namespace std;
 
 void displayMenu() {
  cout << "Commands: " << endl;
- cout << "+     : To begin the insert function" << endl;
+ cout << "+<int>     : To begin the insert function" << endl;
+ cout << "-<int>     : To begin the remove function" << endl;
  cout << "D     : To display current linkedlist" << endl;
  cout << "Q     : To quit the program" << endl;
 }
@@ -20,14 +21,21 @@ int main() {
         cout << "\nCommand: ";
         cin >> command;
 
-        if (command == "+") { // inserting
-            cout << "Enter an char to insert into list: ";
-            cin >> character;
-            cout << endl;
+        if (command[0] == '+') { // inserting an integer
+            char character = command[1]; // taking the value not the plus to insert
             list.Insert(character);
+            cout << endl;
+            list.Display();
         }
 
         if (command == "D") { // displaying the current list
+            list.Display();
+        }
+
+        if (command[0] == '-') { // displaying the current list
+            char character = command[1];
+            list.RemoveNode(character);
+            cout << endl;
             list.Display();
         }
     }

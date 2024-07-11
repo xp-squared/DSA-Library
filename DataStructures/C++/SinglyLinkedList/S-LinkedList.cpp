@@ -17,7 +17,6 @@ void LinkedList::Insert(char data) {
     newNode->next = head;
     head = newNode;
     size++;
-    Display();
 }
 
 
@@ -60,7 +59,7 @@ void LinkedList::RemoveNode(char data) {
 
 void LinkedList::Display() const {
     if (head == nullptr) {
-        cout << "Empty List." << endl;
+        cout << "\nEmpty List." << endl;
         cout << "Current Size: " << size << endl;
         return;
     }
