@@ -19,6 +19,56 @@ void LinkedList::Insert(char data) {
     size++;
 }
 
+void LinkedList::InsertAt(char newData, char dataBeingPushed) {
+    Node* newNode = new Node(newData);
+    if (head == nullptr) {
+        newNode->next = head;
+        head = newNode;
+        size++;
+        return;
+    }
+    Node* temp = head;
+    if (head->data == dataBeingPushed) { // example if you are inserting 5 where 7 is the head type @5 7
+        newNode->next = head;
+        head = newNode;
+        size++;
+        return;
+    }
+    else {
+        Node* previous;
+        while(temp->data != dataBeingPushed && temp->next != nullptr) {
+            previous = temp;
+            temp = temp->next;
+        }
+        if (temp->next == nullptr && temp->data != dataBeingPushed) { // this account for if inserting an item and we do not find the location user gives
+            temp->next = newNode;
+            size++;
+            return;
+        }
+        else { // fixing the pointers to put the newnode before the dataBeingPushed and after the the one behind the dataBeingPushed
+            previous->next = newNode;
+            newNode->next = temp;
+            size++;
+        }
+    }
+
+}
+
+void LinkedList::Search(char data) {
+    Node* temp = head;
+    while(temp != nullptr && temp->data != data) {
+        temp = temp->next;
+    }
+    if (temp == nullptr) {
+        cout << "Data was not found." << endl;
+        return;
+    }
+    else if (temp->data == data) {
+        cout << "Data was found!" << endl;
+        return;
+    }
+}
+
 
 void LinkedList::RemoveNode(char data) {
     // removing a node with specficic data
@@ -30,7 +80,7 @@ void LinkedList::RemoveNode(char data) {
     }
 
     // if the head has the information we want to delete
-    if (head->data == data) {
+    else if (head->data == data) {
         Node* temp = head;
         head = head->next;
         delete temp;

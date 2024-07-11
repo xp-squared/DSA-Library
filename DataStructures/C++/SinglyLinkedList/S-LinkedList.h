@@ -24,8 +24,8 @@ class LinkedList {
         void Insert(char data);
         void RemoveNode(char data); 
 
-        void InsertAt();
-        void Search();
+        void InsertAt(char data, char dataBeingPushed);
+        void Search(char data);
         void Display() const;
 
         // add copy constructor and assignment operator if you are copying lists. 
