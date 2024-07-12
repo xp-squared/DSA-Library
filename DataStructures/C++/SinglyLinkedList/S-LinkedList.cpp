@@ -7,7 +7,8 @@ LinkedList::LinkedList() {
 
 
 LinkedList::~LinkedList() { // come back to destructor
-
+    ClearList();
+    cout << "List has been cleared." << endl;
 }
 
 
@@ -66,6 +67,27 @@ void LinkedList::Search(char data) {
     else if (temp->data == data) {
         cout << "Data was found!" << endl;
         return;
+    }
+}
+
+void LinkedList::getNth(char character) {
+    int index = character - '0'; // converting the index character to int to compare with size
+    if (index < 0 || index >= size) {
+        cout << "Invalid index" << endl;
+        return;
+    }
+    
+    Node* temp = head;
+    int counter = 0;
+    while (temp != nullptr && counter < index) {
+        temp = temp->next;
+        counter++;
+    }
+    
+    if (temp != nullptr) {
+        cout << temp->data << " is at index " << index << endl;
+    } else {
+        cout << "Node not found at index " << index << endl;
     }
 }
 

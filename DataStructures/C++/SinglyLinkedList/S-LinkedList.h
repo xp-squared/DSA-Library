@@ -24,6 +24,7 @@ class LinkedList {
         void Insert(char data);
         void RemoveNode(char data); 
         void ClearList();
+        void getNth(char data);
 
         void InsertAt(char data, char dataBeingPushed);
         void Search(char data);

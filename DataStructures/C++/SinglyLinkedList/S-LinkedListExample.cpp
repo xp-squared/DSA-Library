@@ -9,6 +9,7 @@ void displayMenu() {
  cout << "-<char>                        : To begin the remove function" << endl;
  cout << "?<char>                        : To begin the search function" << endl;
  cout << "@<char> <dataBeingPushedUp>    : To begin the InsertAt function" << endl; // inserts at the nodes location and moves the old one forward
+ cout << "*<char>                        : To get item at Nth location" << endl;
  cout << "C                              : To clear current linkedlist" << endl;
  cout << "D                              : To display current linkedlist" << endl;
  cout << "Q                              : To quit the program" << endl;
@@ -31,33 +32,38 @@ int main() {
             list.Display();
         }
 
-        else if (command == "D" || command == "d") { // displaying the current list
+        else if (command == "D" || command == "d") { 
             list.Display();
         }
 
-        else if (command == "C" || command == "c") { // displaying the current list
+        else if (command == "C" || command == "c") { 
             list.ClearList();
             list.Display();
         }
 
-        else if (command[0] == '-') { // displaying the current list
+        else if (command[0] == '-') { 
             char character = command[1];
             list.RemoveNode(character);
             cout << endl;
             list.Display();
         }
 
-        else if (command[0] == '?') { // displaying the current list
+        else if (command[0] == '?') {
             char character = command[1];
             list.Search(character);
             cout << endl;
             list.Display();
         }
 
-        else if (command[0] == '@') { // displaying the current list
+        else if (command[0] == '@') { 
             char character = command[1];
             char dataBeingPushed = command[3];
             list.InsertAt(character, dataBeingPushed);
+            list.Display();
+        }
+        else if (command[0] == '*') {  // getNTH so if it was *3 get the third value
+            char character = command[1];
+            list.getNth(character);
             list.Display();
         }
     }
