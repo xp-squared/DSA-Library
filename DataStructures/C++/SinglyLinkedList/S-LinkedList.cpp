@@ -121,3 +121,14 @@ void LinkedList::Display() const {
     cout << "NULLPTR" << endl;
     cout << "Current Size: " << size << endl << endl;
     }
+
+void LinkedList::ClearList() {
+    Node* temp = head;
+    while (temp != nullptr) {
+        Node* current = temp;
+        temp = temp->next;
+        delete current;
+    }
+    head = nullptr;
+    size = 0;
+}

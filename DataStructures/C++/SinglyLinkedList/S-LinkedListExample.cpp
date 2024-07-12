@@ -5,12 +5,13 @@ using namespace std;
 
 void displayMenu() {
  cout << "Commands: " << endl;
- cout << "+<char>     : To begin the insert function" << endl;
- cout << "-<char>     : To begin the remove function" << endl;
- cout << "?<char>     : To begin the search function" << endl;
+ cout << "+<char>                        : To begin the insert function" << endl;
+ cout << "-<char>                        : To begin the remove function" << endl;
+ cout << "?<char>                        : To begin the search function" << endl;
  cout << "@<char> <dataBeingPushedUp>    : To begin the InsertAt function" << endl; // inserts at the nodes location and moves the old one forward
- cout << "D     : To display current linkedlist" << endl;
- cout << "Q     : To quit the program" << endl;
+ cout << "C                              : To clear current linkedlist" << endl;
+ cout << "D                              : To display current linkedlist" << endl;
+ cout << "Q                              : To quit the program" << endl;
 }
 
 int main() {
@@ -30,7 +31,12 @@ int main() {
             list.Display();
         }
 
-        else if (command == "D") { // displaying the current list
+        else if (command == "D" || command == "d") { // displaying the current list
+            list.Display();
+        }
+
+        else if (command == "C" || command == "c") { // displaying the current list
+            list.ClearList();
             list.Display();
         }
 

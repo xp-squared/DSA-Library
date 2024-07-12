@@ -23,6 +23,7 @@ class LinkedList {
 
         void Insert(char data);
         void RemoveNode(char data); 
+        void ClearList();
 
         void InsertAt(char data, char dataBeingPushed);
         void Search(char data);
