@@ -3,6 +3,20 @@
 
 using namespace std; 
 
+/*
+Functions to add:
+
+Reverse: Reverses the linked list.
+GetSize: Returns the size of the linked list.
+IsEmpty: Checks if the linked list is empty.
+FindMiddle: Finds and returns the middle element of the linked list.
+RemoveDuplicates: Removes duplicate elements from the linked list.
+Merge: Merges another linked list into this linked list.
+Sort: Sorts the linked list.
+
+*/
+
+
 void displayMenu() {
  cout << "Commands: " << endl;
  cout << "+<char>                        : To begin the insert function" << endl;
