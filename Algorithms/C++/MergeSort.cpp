@@ -22,7 +22,7 @@ int main() {
 }
 
 /*
-    cd Algorithms/C++     
-    g++ -std=c++11 -o MergeSort MergeSort.cpp
-    ./MergeSort     
+    cd Algorithms/C++
+    g++ -std=c++11 MergeSort.cpp -o tempExecutable && ./tempExecutable && rm tempExecutable
+
 */
