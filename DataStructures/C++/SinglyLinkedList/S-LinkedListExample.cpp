@@ -14,6 +14,8 @@ RemoveDuplicates: Removes duplicate elements from the linked list.
 Merge: Merges another linked list into this linked list.
 Sort: Sorts the linked list.
 
+MAKE THIS TEMPLATE *FACEPALM*
+
 */
 
 
