@@ -48,21 +48,47 @@ class Stack:
             print(self.stackList[i], end = " ")
         print()
 
-        
+
+def Menu():
+    print("\nWelcome to the Stack!")
+    print("PushX : to push an element onto the stack")
+    print("Pop   : to pop topmost element from the stack")
+    print("P     : peek at last pushed element of stack")
+    print("S     : to get the size of the stack")
+    print("E     : to see if the stack is empty")
+    print("D     : display the stack")
+    print("Q     : to quit the program")
+    print()
+
+
 
 def main(): 
     s = Stack()
-    s.push(1)
-    s.push(7)
-    s.push(16)
-    s.display()
-    s.pop()
-    s.display()
-    s.push(25)
-    s.push(69)
-    s.display()
-    s.pop()
-    s.display()
+    choice = "y"
+    while choice != "Q" and choice != "q":
+        Menu()
+        s.display()
+        print()
+        choice = input("Enter your choice: ")
+        print()
+        if choice == "Pop":
+            s.pop()
+        elif choice.startswith("Push"):
+            try:
+                number = int(choice[4:])  # Extract the number after "Push"
+                s.push(number)
+            except ValueError:
+                print("Invalid input for Push. Please use the format PushX where X is an integer.")
+        elif choice == "P":
+            print("Top element of stack is: ", s.peek())
+        elif choice == "S":
+            print("Size of stack is: ", s.size())
+        elif choice == "E":
+            print("Stack is empty" if s.isEmpty() else "Stack is not empty")
+        elif choice == "D":
+            s.display()
+
+
 
     # enable it where a user can insert and pop to do this for simplicity
     # fix spacing issue with display
