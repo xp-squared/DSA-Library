@@ -90,9 +90,4 @@ def main():
 
 
 
-    # enable it where a user can insert and pop to do this for simplicity
-    # fix spacing issue with display
-    # Testing
-
-
 main()

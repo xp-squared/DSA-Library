@@ -14,8 +14,15 @@ class Queue:
         return len(self.qList) == 0
     
     def enqueue(self, data):
+        self.qList.append(data)
     
     def dequeue(self):
+        if self.isEmpty == True:
+            return print("Queue is empty")
+        else:
+            print("We are removing: ", self.qList[0])
+            print()
+            return self.qList.pop(0)
 
     def size(self):
         return len(self.qList)
@@ -25,9 +32,9 @@ class Queue:
             print("Empty List, nothing to print")
             return
         print("Current List: ", end = " ")
-        for i in range(len(self.stackList)):
+        for i in range(len(self.qList)):
             # printing each element, remember we can make the print function end with a space instead of how it ends always with a new line
-            print(self.stackList[i], end = " ")
+            print(self.qList[i], end = " ")
         print()
 
 
@@ -66,12 +73,5 @@ def main():
             print("Queue is empty" if q.isEmpty() else "Queue is not empty")
         elif choice == "D":
             q.display()
-
-
-
-    # enable it where a user can insert and pop to do this for simplicity
-    # fix spacing issue with display
-    # Testing
-
 
 main()
