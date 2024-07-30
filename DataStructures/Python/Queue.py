@@ -13,15 +13,18 @@ class Queue:
     def isEmpty(self):
         return len(self.qList) == 0
     
+    # putting the data at the end of the list
     def enqueue(self, data):
         self.qList.append(data)
     
+    # removing the data at the front of the list
     def dequeue(self):
         if self.isEmpty == True:
             return print("Queue is empty")
         else:
             print("We are removing: ", self.qList[0])
             print()
+            # we always remove the element at the index 0 as that was the first one in
             return self.qList.pop(0)
 
     def size(self):
