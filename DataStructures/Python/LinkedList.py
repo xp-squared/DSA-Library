@@ -56,16 +56,55 @@ class LinkedList:
             while self.temp.next.next != None:
                 self.temp = self.temp.next
             self.temp.next = None
-        
+
+    def get_length_of_list(self):
+        counter = 0
+        self.temp = self.head
+        while self.temp != None:
+            counter+=1
+            self.temp = self.temp.next
+        print("List Length: ", counter)
+
+    def get_total(self):
+        if self.head == None:
+            print("Empty list, total is NULL.")
+            print()
+        else:
+            counter = 0
+            self.temp = self.head
+            while self.temp!= None:
+                counter += self.temp.data
+                self.temp = self.temp.next
+            print("Total of list: ", counter, "\n")
+
+    # function to remove the first instance of a value that user wants removed, if there are two fours in the list it will remove the 4 closest to the front
+    def remove_first_instance_of_value_given(self, data):
+        if self.head == None:
+            print("Empty list.")
+        elif self.head.data == data:
+            self.head = self.head.next
+        else:
+            self.temp = self.head
+            prev = None
+            while self.temp != None and self.temp.data != data:
+                prev = self.temp
+                self.temp = self.temp.next
+            if self.temp == None:
+                print("Data not found within list.")
+            else:
+                prev.next = self.temp.next
 
     
 
 def menu():
     print("Welcome to the LinkedList")
-    print("+X     : Insert X at the beginning of the list.")
-    print(">X     : Insert X at the end of the list.")
-    print("-        : To remove frontmost element")
-    print("--       : To remove backmost element")
+    print("+X       : Insert X at the beginning of the list.")
+    print("/X       : Insert X at the end of the list.")
+    print("-X       : To remove first instance of that element in list.")
+    print("<        : To remove frontmost element.")
+    print(">        : To remove backmost element.")
+    print("L        : To get length of the list.")
+    print("T        : Get total sum of numbers from list.")
     print("Q        : Insert Q to quit the program.")
 
 
@@ -90,18 +129,31 @@ def main():
             except ValueError:
                 print("Invalid input.")
 
-        elif choice.startswith(">"):
+        elif choice.startswith("/"):
             try:
-                number = int(choice[1:])  # Extract the number after "End"
+                number = int(choice[1:])  # Extract the number after ""
                 LL.insert_at_end(number)
             except ValueError:
                 print("Invalid input.")
+    
+        elif choice.startswith("-"):
+            try:
+                number = int(choice[1:])  # Extract the number after "-"
+                LL.remove_first_instance_of_value_given(number)
+            except ValueError:
+                print("Invalid input.")
 
-        elif choice == "-":
+        elif choice == "<":
             LL.remove_front()
 
-        elif choice == "--":
+        elif choice == ">":
             LL.remove_back()
+        
+        elif choice == "L" or choice == "l":
+            LL.get_length_of_list()
+
+        elif choice == "T" or choice == "t":
+            LL.get_total()
 
 
 main()
