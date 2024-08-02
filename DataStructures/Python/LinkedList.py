@@ -97,7 +97,6 @@ class LinkedList:
     
 
 def menu():
-    print("Welcome to the LinkedList")
     print("+X       : Insert X at the beginning of the list.")
     print("/X       : Insert X at the end of the list.")
     print("-X       : To remove first instance of that element in list.")
@@ -112,6 +111,7 @@ def menu():
 
 def main():
     print()
+    print("Welcome to the LinkedList")
     LL = LinkedList()
     choice = "y"
     while choice != "Q" and choice != "q":
