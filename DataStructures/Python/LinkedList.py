@@ -124,14 +124,14 @@ def main():
         print()
         if choice.startswith("+"):
             try:
-                number = int(choice[1:])  # Extract the number after "Beg"
+                number = int(choice[1:])  # Extract the number after "+"
                 LL.insert_at_beginning(number)
             except ValueError:
                 print("Invalid input.")
 
         elif choice.startswith("/"):
             try:
-                number = int(choice[1:])  # Extract the number after ""
+                number = int(choice[1:])  # Extract the number after "/"
                 LL.insert_at_end(number)
             except ValueError:
                 print("Invalid input.")
