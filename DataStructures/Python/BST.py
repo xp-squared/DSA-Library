@@ -39,7 +39,8 @@ class BST:
             return
         print(currentNode.data)
         print("\n /  \ ")
-        
+        # LEFT OFF HERE, THINKING ABOUT HOW IMPLEMENTED IN PAST ??????
+
 
 
 
