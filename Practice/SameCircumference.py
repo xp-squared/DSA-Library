@@ -34,6 +34,4 @@ def main():
     else:
         print("All points lie on the same circumference")
     
-
-
 main()
