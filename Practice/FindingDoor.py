@@ -23,11 +23,11 @@ def findDoor(doorNumber):
                 return position
         position = position - currentSteps # return to position 0 
 
-        currentSteps = currentSteps * 2
+        currentSteps = currentSteps * 2 
         
 
 def main():
-    random_number = random.randint(-100000, 100000)
+    random_number = random.randint(-100, 100)
     found = findDoor(random_number)
     #print(f"Door was found at {random_number}")
     print(f"Door was found at {found}")
