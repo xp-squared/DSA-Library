@@ -10,4 +10,6 @@ def main():
     for key, value in s.items():
         print(f"{key}: {value}")
 
+
+
 main()
