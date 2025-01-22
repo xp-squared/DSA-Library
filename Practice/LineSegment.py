@@ -3,6 +3,15 @@ class Point:
         self.x = x 
         self.y = y
 
+
+# Given three collinear points p, q, r, the function checks if  
+# point q lies on line segment 'pr'  
+def onSegment(p, q, r): 
+    if ( (q.x <= max(p.x, r.x)) and (q.x >= min(p.x, r.x)) and 
+           (q.y <= max(p.y, r.y)) and (q.y >= min(p.y, r.y))): 
+        return True
+    return False
+
 def orientation(p, q, r):
     # 0 --> p, q and r are collinear
     # 1 --> Clockwise
@@ -12,7 +21,7 @@ def orientation(p, q, r):
         return 1
     elif value < 0: # counterclockwise
         return 2
-    else:
+    else: # collinear 
         return 0
 
 
@@ -35,7 +44,24 @@ def intersection(p1,q1,p2,q2):
     # the x-projections of (p1, q1) and (p2, q2) intersect 
     # the y-projections of (p1, q1) and (p2, q2) intersect
 
-    # ...
+    # p1 , q1 and p2 are collinear  p2 lies on  p1q1 
+    if ((o1 == 0) and onSegment(p1, p2, q1)): 
+        return True
+  
+    # p1 , q1 and q2 are collinear q2 lies on  p1q1 
+    if ((o2 == 0) and onSegment(p1, q2, q1)): 
+        return True
+  
+    # p2 , q2 and p1 are collinear p1 lies on p2q2 
+    if ((o3 == 0) and onSegment(p2, p1, q2)): 
+        return True
+  
+    # p2 , q2 and q1 are collinear,  q1 lies on p2q2 
+    if ((o4 == 0) and onSegment(p2, q1, q2)): 
+        return True
+  
+    # If none of the cases 
+    return False
 
 def main():
     x1, y1 = map(float, input("Enter starting point for line 1 (x,y): ").split(","))
